@@ -1,15 +1,21 @@
-var  boxtextElem, btninfoElem;
-function openBox(open, info) {
+window.onload = function () {
    
-    boxtextElem = document.getElementsByClassName("box-text");
-    for (var i = 0; i < boxtextElem.length; i++) {
-        boxtextElem[i].style = "display:none";
+    var tabs = document.querySelector('.tabs');
+    tabs.addEventListener('click', Tab);
+    function Tab(event){
+        if (event.target.classList == 'tablink'){
+            var data_tab = event.target.getAttribute('data-tab');
+           var text = document.getElementsByClassName('text');
+        
+            for (i = 0; i < text.length; i++){
+                if (data_tab == i){
+                    text[i].classList.add('active');
+                }
+                else{
+                   text[i].classList.remove('passive');
+                }
+            }
+        }
     }
-    btninfoElem = document.getElementsByClassName("btn-info");
-    for (var i = 0; i < btninfoElem.length; i++) {
-        btninfoElem[i].className.replace("active", " ");
-    }
-    document.getElementById(info).style = "display:block";
-
 }
-  document.getElementById("OpenRun").click();
+
