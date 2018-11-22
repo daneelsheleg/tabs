@@ -10,9 +10,10 @@ window.onload = function () {
             for (i = 0; i < text.length; i++){
                 if (data_tab == i){
                     text[i].classList.add('active');
+                   
                 }
                 else{
-                   text[i].classList.remove('passive');
+                    text[i].classList.remove('active');
                 }
             }
         }
